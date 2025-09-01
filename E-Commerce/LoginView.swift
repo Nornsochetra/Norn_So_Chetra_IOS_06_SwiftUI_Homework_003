@@ -41,14 +41,16 @@ public struct LoginView: View {
                 .frame(height: 690)
                 .padding(.top,-50)
                 VStack{
-                    customBtn(text: "Create Account", action: {
-                        
-                    })
+                    NavigationLink {
+                        CreateAccount()
+                    } label: {
+                        customBtn(text: "Create Account") {}
+                    }
                     Text("Already have an Account")
                         .foregroundStyle(.blue)
                 }
             }
         }
+        .padding()
     }
 }
-

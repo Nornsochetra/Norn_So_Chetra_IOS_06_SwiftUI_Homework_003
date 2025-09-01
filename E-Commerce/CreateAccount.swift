@@ -93,23 +93,32 @@ public struct CreateAccount: View {
                 }
 
                 // Submit Button
-                Button("Create Account") {
-                    // Handle sign up
+                NavigationLink {
+                    MainTabView()
+                } label: {
+                    customBtn(text: "Create Account") {}
                 }
-                .foregroundStyle(.white)
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(.blue)
-                .cornerRadius(30)
-                .padding(.top, 10)
+                Text("Or using other method")
+                    .foregroundStyle(Color(.systemGray))
+                
+                // google button
+                Button(action: {
+                    
+                }){
+                    customBtnLogin(image: "google", text: "SignUp with google")
+                }
+                // facebook button
+                Button(action: {
+                    
+                }){
+                    customBtnLogin(image: "facebook", text: "SignUp with facebook")
+                }
             }
             .padding()
         }
+        .navigationBarBackButtonHidden(true)
         .scrollDismissesKeyboard(.interactively)
         .ignoresSafeArea(.keyboard, edges: .bottom)
     }
 }
 
-#Preview {
-    ContentView()
-}

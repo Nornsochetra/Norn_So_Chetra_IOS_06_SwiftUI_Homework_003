@@ -33,3 +33,19 @@ func customDescription (description: String,align: TextAlignment = .center) -> s
         .multilineTextAlignment(align)
 }
 
+func customBtnLogin(image: String,text: String) -> some View {
+    HStack{
+        Image(image)
+            .resizable()
+            .frame(width: 32, height: 32)
+        Text(text)
+            .foregroundStyle(.black)
+            .font(.system(size: 18,weight: .medium))
+    }
+    .padding()
+    .frame(maxWidth: .infinity)
+    .overlay{
+        RoundedRectangle(cornerRadius: 50)
+            .stroke(Color(.systemGray3),style: StrokeStyle(lineWidth: 1))
+    }
+}
